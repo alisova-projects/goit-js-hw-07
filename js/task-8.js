@@ -23,3 +23,42 @@
 
     <div id="boxes"></div>
 */
+
+/*
+const btnCreateEl = document.querySelector('button[data-action="render"]');
+const btnClearEl = document.querySelector('button[data-action="destroy"]');
+const inputEl = document.querySelector("#controls input");
+let inputValue = 0;
+const boxesWrapperEl = document.querySelector("#boxes");
+
+const randomRgbColor = () => {
+  const firstRandomColor = Math.round(Math.random() * 255);
+  const secondRandomColor = Math.round(Math.random() * 255);
+  const thirdRandomColor = Math.round(Math.random() * 255);
+  return `rgb(${firstRandomColor},${secondRandomColor},${thirdRandomColor})`;
+};
+
+function createBoxes(amount) {
+  const array = new Array(amount);
+  const boxes = [...array];
+  const boxesMarkup = boxes
+    .map(
+      (el, i) =>
+        `<div style="height: ${i * 10 + 30}px; width: ${
+          i * 10 + 30
+        }px; background-color:${randomRgbColor()};"></div>`
+    )
+    .join("");
+  boxesWrapperEl.innerHTML = boxesMarkup;
+}
+
+btnCreateEl.addEventListener("click", function () {
+  createBoxes(Number(inputEl.value));
+});
+
+function destroyBoxes() {
+  boxesWrapperEl.innerHTML = "";
+}
+
+btnClearEl.addEventListener("click", destroyBoxes);
+*/
