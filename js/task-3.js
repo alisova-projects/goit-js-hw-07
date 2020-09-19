@@ -30,7 +30,7 @@ const images = [
 ];
 */
 const galleryContainerEl = document.querySelector("ul#gallery");
-console.log(galleryContainerEl);
+// console.log(galleryContainerEl);
 
 const images = [
   {

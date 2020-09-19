@@ -38,6 +38,6 @@ const dish = ingredients.map((ingredient) => {
   return liEl;
 });
 
-console.log(dish);
+// console.log(dish);
 
 ingredientsContainerEl.append(...dish);
