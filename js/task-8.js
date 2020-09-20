@@ -24,17 +24,21 @@
     <div id="boxes"></div>
 */
 
-/*
-const btnCreateEl = document.querySelector('button[data-action="render"]');
-const btnClearEl = document.querySelector('button[data-action="destroy"]');
+const createBtnEl = document.querySelector(
+  '#controls button[data-action="render"]'
+);
+const destroyBtnEl = document.querySelector(
+  '#controls button[data-action="destroy"]'
+);
 const inputEl = document.querySelector("#controls input");
+const boxesContainerEl = document.querySelector("#boxes");
 let inputValue = 0;
-const boxesWrapperEl = document.querySelector("#boxes");
 
 const randomRgbColor = () => {
-  const firstRandomColor = Math.round(Math.random() * 255);
-  const secondRandomColor = Math.round(Math.random() * 255);
-  const thirdRandomColor = Math.round(Math.random() * 255);
+  const firstRandomColor = Math.round(Math.random() * 256);
+  const secondRandomColor = Math.round(Math.random() * 256);
+  const thirdRandomColor = Math.round(Math.random() * 256);
+
   return `rgb(${firstRandomColor},${secondRandomColor},${thirdRandomColor})`;
 };
 
@@ -43,22 +47,21 @@ function createBoxes(amount) {
   const boxes = [...array];
   const boxesMarkup = boxes
     .map(
-      (el, i) =>
-        `<div style="height: ${i * 10 + 30}px; width: ${
-          i * 10 + 30
-        }px; background-color:${randomRgbColor()};"></div>`
+      (box, i) =>
+        `<div style="height: ${i * 10 + 30}px; width: ${i * 10 + 30}px;
+    background-color: ${randomRgbColor()};"></div>`
     )
     .join("");
-  boxesWrapperEl.innerHTML = boxesMarkup;
+  boxesContainerEl.innerHTML = boxesMarkup;
 }
 
-btnCreateEl.addEventListener("click", function () {
+createBtnEl.addEventListener("click", function () {
   createBoxes(Number(inputEl.value));
 });
 
-function destroyBoxes() {
-  boxesWrapperEl.innerHTML = "";
-}
+destroyBtnEl.addEventListener("click", destroyBoxes);
 
-btnClearEl.addEventListener("click", destroyBoxes);
-*/
+function destroyBoxes() {
+  boxesContainerEl.innerHTML = "";
+  inputEl.value = "";
+}
