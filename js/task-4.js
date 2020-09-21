@@ -13,13 +13,13 @@
 */
 
 let counterValue = 0;
-function increment() {
+function increment(value) {
   //   console.log("клик на инкремент");
-  counterValue += 1;
+  return (value += 1);
 }
-function decrement() {
+function decrement(value) {
   //   console.log("клик на декремент");
-  counterValue -= 1;
+  return (value -= 1);
 }
 
 const counterValueEl = document.querySelector("#value");
@@ -31,11 +31,11 @@ const decrementBtn = document.querySelector(
 );
 
 incrementBtn.addEventListener("click", function () {
-  increment();
+  counterValue = increment(counterValue);
   counterValueEl.textContent = counterValue;
 });
 
 decrementBtn.addEventListener("click", function () {
-  decrement();
+  counterValue = decrement(counterValue);
   counterValueEl.textContent = counterValue;
 });

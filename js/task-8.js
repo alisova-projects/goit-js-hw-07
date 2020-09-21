@@ -32,7 +32,6 @@ const destroyBtnEl = document.querySelector(
 );
 const inputEl = document.querySelector("#controls input");
 const boxesContainerEl = document.querySelector("#boxes");
-let inputValue = 0;
 
 const randomRgbColor = () => {
   const firstRandomColor = Math.round(Math.random() * 256);
@@ -45,14 +44,13 @@ const randomRgbColor = () => {
 function createBoxes(amount) {
   const array = new Array(amount);
   const boxes = [...array];
-  const boxesMarkup = boxes
+  boxesContainerEl.innerHTML = boxes
     .map(
       (box, i) =>
         `<div style="height: ${i * 10 + 30}px; width: ${i * 10 + 30}px;
     background-color: ${randomRgbColor()};"></div>`
     )
     .join("");
-  boxesContainerEl.innerHTML = boxesMarkup;
 }
 
 createBtnEl.addEventListener("click", function () {

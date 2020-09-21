@@ -42,5 +42,4 @@ function onInputBlur(event) {
     inputRef.classList.add("invalid");
     inputRef.classList.remove("valid");
   }
-  return;
 }
